@@ -1,0 +1,51 @@
+{% extends "Alsina3dd/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+   <!-- Heading -->
+  <section>
+    <div style="width:75%; margin: auto; text-align: center; color: white;"> 
+    Bienvenidos a alsina digital. Este sitio es para uso de los vecinos de valentin alsina y alrededores. Esperamos que sea de utilidad y entre todos podamos contribuir a que este sitio se transforme en una solución y atajo para encontrar lo que necesitamos. Nuestra idea es brindar el servico de informacion util para los vecinos. Tendremos una seccion con telefonos utiles, un blog para que cualquier vecino pueda comentar una buena o mala experiencia en el barrio. En la seccion de comercios todo aquel comerciante que quiera aparecer en el sitio puede escribirnos a la direccion de contacto y publicaremos su negocio. De la misma manera puede hacerlo cualquier vecino que ofrezca prestar un servicio y sera publicado en la pagina de prestadores. 
+    Este un sitio de internet en el cual cualquier persona puede tener acceso y leer las publicaciones. Cualquier comentario que se considere ofensivo de alguna manera, sera borrado por el administrador de la pagina.</h6>
+    </div>
+  </section>
+
+   
+    
+        <div class="container">
+              <div class="row"style="margin: auto; text-align: center; color: white;">
+                        {% for Publicidad in publicidades %}
+                        <div class="card" style="width: 30%">
+                        <div class="card-header"> 
+                                <h7 class="card-title" style="color:brown">{{Publicidad.nombrenegocio}}</h7>
+                            </div>
+                                              
+                            <div class="card-body">
+                              <div class="card-img">
+                                <img src="{{Publicidad.imagen.url}}" class="card-img-top" width="20rem" height="200rem"alt="aca va la imagen del chino">
+
+                              </div>    
+                                <p class="card-text" style="color:blue">{{Publicidad.slogan}}</p>
+                            </div>
+                            <div class="card-footer"style="color:blue">
+                                <p>direccion:{{Publicidad.direccion}}</p>
+                                <p>telefono:{{Publicidad.telefono}}</p>  
+                                <p>web:{{Publicidad.web}}</p>
+                            </div>
+                          
+                          </div>
+                          {% endfor %}
+                          
+                   
+             
+                   
+
+              </div>
+        </div>
+
+
+
+
+    {% endblock %} 
